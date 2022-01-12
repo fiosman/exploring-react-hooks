@@ -5,6 +5,7 @@ import "./ProductView.css";
 
 function ProductView({ products }) {
   const [isSideOpen, setIsSideOpen] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState();
 
   return (
     <div className="product-view">
@@ -15,7 +16,7 @@ function ProductView({ products }) {
             <ProductListItem
               key={item.id}
               product={item}
-              onClick={() => console.log("SELECT PRODUCT", item)}
+              onClick={() => setSelectedProduct(item)}
             />
           ))}
         </div>
@@ -26,7 +27,7 @@ function ProductView({ products }) {
             {isSideOpen ? ">" : "<"}
           </div>
         </div>
-        <ProductDetails visible={isSideOpen} />
+        <ProductDetails visible={isSideOpen} selectedProduct={selectedProduct} />
       </div>
     </div>
   );
