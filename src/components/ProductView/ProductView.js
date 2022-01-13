@@ -27,7 +27,7 @@ function ProductView({ products }) {
             {isSideOpen ? ">" : "<"}
           </div>
         </div>
-        <ProductDetails visible={isSideOpen} selectedProduct={selectedProduct} />
+        <ProductDetails visible={isSideOpen} product={selectedProduct} />
       </div>
     </div>
   );
