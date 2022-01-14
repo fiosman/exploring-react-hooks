@@ -15,6 +15,7 @@ function ProductView({ products }) {
           {products.map((item) => (
             <ProductListItem
               key={item.id}
+              isSelected={selectedProduct ? selectedProduct.id === item.id : false}
               product={item}
               onClick={() => setSelectedProduct(item)}
             />
