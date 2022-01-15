@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProductListItem from "../ProductListItem";
 import ProductDetails from "../ProductDetails";
 import "./ProductView.css";
