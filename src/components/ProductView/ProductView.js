@@ -8,9 +8,9 @@ function ProductView({ products }) {
   const [selectedProduct, setSelectedProduct] = useState();
 
   useEffect(() => {
-    console.log(isSideOpen);
-    console.log(selectedProduct);
-  }, []);
+    setIsSideOpen(true);
+  }, [selectedProduct]);
+
   return (
     <div className="product-view">
       <div className="product-main-area">
