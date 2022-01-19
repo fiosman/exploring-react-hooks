@@ -4,7 +4,9 @@ import ProductDetails from "../ProductDetails";
 import "./ProductView.css";
 
 function ProductView({ products }) {
-  const [isSideOpen, setIsSideOpen] = useState(true);
+  const [isSideOpen, setIsSideOpen] = useState(
+    window.localStorage.getItem("isSideOpen") === "true" ? true : false || true
+  );
   const [selectedProduct, setSelectedProduct] = useState();
 
   useEffect(() => {
@@ -13,6 +15,12 @@ function ProductView({ products }) {
 
   useEffect(() => {
     if (!isSideOpen) setSelectedProduct();
+  }, [isSideOpen]);
+
+  useEffect(() => {
+    console.log(isSideOpen);
+    if (!isSideOpen) window.localStorage.setItem("isSideOpen", false);
+    if (isSideOpen) window.localStorage.setItem("isSideOpen", true);
   }, [isSideOpen]);
 
   return (
