@@ -5,7 +5,7 @@ import "./ProductView.css";
 
 function ProductView({ products }) {
   const [isSideOpen, setIsSideOpen] = useState(
-    window.localStorage.getItem("isSideOpen") === "true" ? true : false || true
+    window.localStorage.getItem("isSideOpen") === "true" ? true : false
   );
   const [selectedProduct, setSelectedProduct] = useState();
 
@@ -18,7 +18,6 @@ function ProductView({ products }) {
   }, [isSideOpen]);
 
   useEffect(() => {
-    console.log(isSideOpen);
     if (!isSideOpen) window.localStorage.setItem("isSideOpen", false);
     if (isSideOpen) window.localStorage.setItem("isSideOpen", true);
   }, [isSideOpen]);
